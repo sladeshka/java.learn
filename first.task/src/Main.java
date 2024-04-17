@@ -1,5 +1,7 @@
 import Lesson2.Car;
 import Lesson2.CarService;
+import lesson3.StaticExample;
+import lesson4.Array;
 
 import java.util.Scanner;
 
