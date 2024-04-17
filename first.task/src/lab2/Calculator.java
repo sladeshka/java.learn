@@ -14,10 +14,10 @@ public class Calculator {
         return a / b;
     }
     public static double divide(long a, long b) {
-        return a / b;
+        return (double) a / b;
     }
     public static double divide(int a, int b) {
-        return a / b;
+        return (double) a / b;
     }
     public static double multiply(double a, double b) {
         return a * b;
