@@ -5,6 +5,8 @@ import Lesson2.Car;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import static lesson4.SortArray.methodForLab4;
+
 public class lab4 {
     public static void main(String[] args) {
         lab4();
@@ -36,6 +38,9 @@ public class lab4 {
         // fourth task part two
         int[] task4Part2 = {1, 2, 3, 1, 2, 4};
         findFirstUniqueNumber(task4Part2);
+        // fifth task part two
+        int[] result = methodForLab4(task4Part2);
+        System.out.println(Arrays.toString(result));
     }
 
     public static void printOddNumber() {
