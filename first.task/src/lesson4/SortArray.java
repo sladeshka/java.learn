@@ -14,6 +14,10 @@ public class SortArray {
         System.out.println(Arrays.toString(result));
     }
 
+    public static int[] methodForLab4(int[] ints) {
+        return  mergeSort(ints);
+    }
+
     private static int[] mergeSort(int[] ints) {
         System.out.println(Arrays.toString(ints));
         if (ints.length < 2) {
