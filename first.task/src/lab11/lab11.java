@@ -4,6 +4,8 @@ import lesson13.MyRunnable;
 import lesson13.MyThread;
 import lesson13.MyThread2;
 
+import java.util.concurrent.CountDownLatch;
+
 public class lab11 {
     public static void main(String[] args) throws InterruptedException {
         // first task
@@ -36,6 +38,8 @@ public class lab11 {
 
     private static void thirdTask() {
         Counter counter = new Counter();
+        int number = 100;
+        CountDownLatch latch = new CountDownLatch(number);
         Thread[] threads = new Thread[100];
         for (int i = 0; i < 100; i++) {
             threads[i] = new Thread(() -> {
@@ -44,15 +48,14 @@ public class lab11 {
                         counter.increment();
                     }
                 }
+                latch.countDown();
             });
             threads[i].start();
         }
-        for (Thread thread : threads) {
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
         System.out.println("Count: " + counter.getCount());
     }
